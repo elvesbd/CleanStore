@@ -1,6 +1,6 @@
-using CleanStore.Domain.AccountContext.Events.Abstractions;
+using CleanStore.Domain.SharedContext.Events.Abstractions;
 
-namespace CleanStore.Domain.AccountContext.Entities;
+namespace CleanStore.Domain.SharedContext.Entities;
 
 public abstract class Entity(Guid id) : IEquatable<Guid>, IEquatable<Entity>
 {
