@@ -1,6 +1,5 @@
+using CleanStore.Application.SharedContext.UseCases.Abstractions;
+
 namespace CleanStore.Application.AccountContext.UseCases.Create;
 
-public class Command
-{
-    
-}
+public sealed record Command(string Email): ICommandResponse;

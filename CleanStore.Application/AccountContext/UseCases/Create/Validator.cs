@@ -1,6 +1,22 @@
+using FluentValidation;
+using CleanStore.Domain.AccountContext.ValueObjects;
+
 namespace CleanStore.Application.AccountContext.UseCases.Create;
 
-public class Validator
+public class Validator : AbstractValidator<Command>
 {
-    
+    public Validator()
+    {
+        RuleFor(x => x.Email)
+            .MinimumLength(Email.MinLength)
+            .WithMessage($"O e-mail deve conter pelos menos {Email.MinLength} caracteres");
+        
+        RuleFor(x => x.Email)
+            .MaximumLength(Email.MaxLength)
+            .WithMessage($"O e-mail deve conter no máximo {Email.MaxLength} caracteres");
+
+        RuleFor(x => x.Email)
+            .Matches(Email.Pattern)
+            .WithMessage("Email inválido");
+    }
 }

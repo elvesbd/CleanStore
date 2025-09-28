@@ -9,7 +9,7 @@ public sealed partial record Email : ValueObject
 {
     public const int MinLength = 6;
     public const int MaxLength = 160;
-    private const string Pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
+    public const string Pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
     
     public string Address { get; private set; } = string.Empty;
     public string Hash { get; private set; } = string.Empty;
