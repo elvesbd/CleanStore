@@ -1,10 +1,11 @@
 using CleanStore.Domain.AccountContext.Events;
 using CleanStore.Domain.SharedContext.Entities;
 using CleanStore.Domain.AccountContext.ValueObjects;
+using CleanStore.Domain.SharedContext.AggregateRoots.Abstractions;
 
 namespace CleanStore.Domain.AccountContext.Entities;
 
-public sealed class Account : Entity
+public sealed class Account : Entity, IAggregateRoot
 {
     public Email Email { get; private set; } = null!;
 
@@ -14,7 +15,7 @@ public sealed class Account : Entity
         Email = email;
     }
 
-    public static Account CreateAccount(Email email)
+    public static Account Create(Email email)
     {
         var id = Guid.NewGuid();
         var account = new Account(id, email);

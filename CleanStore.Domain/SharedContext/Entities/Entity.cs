@@ -5,7 +5,7 @@ namespace CleanStore.Domain.SharedContext.Entities;
 public abstract class Entity(Guid id) : IEquatable<Guid>, IEquatable<Entity>
 {
     private readonly List<IDomainEvent> _domainEvents  = [];
-    private Guid Id { get; } = id;
+    public Guid Id { get; init; } = id;
     public IReadOnlyList<IDomainEvent> GetDomainEvents => _domainEvents;
     public void ClearDomainEvent() => _domainEvents.Clear();
     public void RaiseDomainEvent(IDomainEvent @event) => _domainEvents.Add(@event);
