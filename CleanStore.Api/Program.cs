@@ -7,7 +7,9 @@ using CleanStore.Infrastructure.SharedContext.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(connectionString));
+builder.Services.AddDbContext<AppDbContext>(x =>
+    x.UseSqlServer(connectionString, m =>
+        m.MigrationsAssembly("CleanStore.Api")));
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
 builder.Services.AddOpenApi();
