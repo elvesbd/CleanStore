@@ -5,7 +5,7 @@ using CleanStore.Domain.SharedContext.ValueObjects;
 
 namespace CleanStore.Domain.AccountContext.ValueObjects;
 
-public partial record Email : ValueObject
+public sealed partial record Email : ValueObject
 {
     public const int MinLength = 6;
     public const int MaxLength = 160;

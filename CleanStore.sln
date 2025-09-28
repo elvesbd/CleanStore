@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanStore.Domain", "CleanS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanStore.Infrastructure", "CleanStore.Infrastructure\CleanStore.Infrastructure.csproj", "{F768E866-4F12-4096-B682-3764F5B7D28F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanStore.Applicattion", "CleanStore.Applicattion\CleanStore.Applicattion.csproj", "{9567FCC0-B6BF-47CA-85C2-342A13F72C15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanStore.Application", "CleanStore.Application\CleanStore.Application.csproj", "{9567FCC0-B6BF-47CA-85C2-342A13F72C15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
