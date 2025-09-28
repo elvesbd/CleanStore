@@ -7,7 +7,7 @@ public abstract class Entity(Guid id) : IEquatable<Guid>, IEquatable<Entity>
     private readonly List<IDomainEvent> _domainEvents  = [];
     public Guid Id { get; init; } = id;
     public IReadOnlyList<IDomainEvent> GetDomainEvents => _domainEvents;
-    public void ClearDomainEvent() => _domainEvents.Clear();
+    public void ClearDomainEvents() => _domainEvents.Clear();
     public void RaiseDomainEvent(IDomainEvent @event) => _domainEvents.Add(@event);
     public bool Equals(Entity? other)
     {
